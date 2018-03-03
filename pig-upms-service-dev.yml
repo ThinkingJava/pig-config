@@ -13,7 +13,7 @@ spring:
     password: root
     url: jdbc:mysql://39.108.108.183:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
   rabbitmq:
-    host: localhost
+    host: 116.196.97.215
     port: 5672
     username: guest
     password: guest
