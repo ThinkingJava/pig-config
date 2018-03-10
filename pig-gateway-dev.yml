@@ -3,24 +3,16 @@ server:
 
 spring:
   rabbitmq:
-    host: localhost
+    host: 116.196.97.215
     port: 5672
     username: guest
-    password: guest
+    password: ENC(gc16brBHPNq27HsjaULgKGq00Rz6ZUji)
   zipkin:
     rabbitmq:
       queue: zipkin
   sleuth:
     sampler:
       percentage: 1.0
-      
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 30000
 
 zuul:
   ignoredServices: '*'
@@ -28,12 +20,12 @@ zuul:
     connect-timeout-millis: 30000
     socket-timeout-millis: 30000
   routes:
-    auth-service:
+    pig-auth:
       path: /auth/**
       serviceId: pig-auth
       stripPrefix: true
       sensitiveHeaders:
-    pig-admin-service:
+    pig-upms-service:
       path: /admin/**
       serviceId: pig-upms-service
       stripPrefix: true
@@ -44,14 +36,14 @@ zuul:
     repository: REDIS 
     behind-proxy: true
     policies:
-      pig-admin-service:
+      pig-upms-service:
         limit: 100
         quota: 100
         refresh-interval: 3
 
 security:
   validate:
-    code: false
+    code: true
   sessions: stateless
   oauth2:
     resource:
@@ -66,6 +58,8 @@ urls:
     - /auth/**
     - /admin/code/*
     - /admin/smsCode/*
+    - /admin/user/info
+    - /admin/menu/userTree
     - /swagger-resources/**
     - /swagger-ui.html
     - /*/v2/api-docs

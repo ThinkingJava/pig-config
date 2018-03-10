@@ -4,7 +4,7 @@ server:
 zipkin:
   collector:
     rabbitmq:
-      addresses: localhost:5672
+      addresses: 116.196.97.215:5672
       password: guest
       username: guest
       queue: zipkin
