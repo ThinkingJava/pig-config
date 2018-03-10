@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: ENC(gc16brBHPNq27HsjaULgKGq00Rz6ZUji)
+    password: root
     url: jdbc:mysql://39.108.108.183:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
     
 zipkin:
