@@ -27,7 +27,7 @@ zuul:
       pig-upms-service:
         limit: 10
         quota: 20
-        refresh-interval: 3
+        refresh-interval: 30
       
 
 security:
