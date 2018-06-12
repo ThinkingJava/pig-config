@@ -28,10 +28,6 @@ zuul:
         limit: 10
         quota: 20
         refresh-interval: 3
-      pig-admin-service:
-        limit: 3
-        quota: 3
-        refresh-interval: 3
       
 
 security:
